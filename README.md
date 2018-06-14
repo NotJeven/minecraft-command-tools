@@ -1,7 +1,11 @@
 # minecraft-command-tools
 Python scripts to be run console side that assist with Minecraft command (.mcfunction) production.
 
-### Example with using the msb parse tool
+### Examples
+There are a lot of great examples in the ```erisfileparse.py``` file included in the repository.
+I mostly left the file manipulation up to the user, as shown in the examples. That means it is required to set up a system for placing a single command into a single array location that is passed to the tools. 
+
+### Example using the msb parse tool
 ```
 """
 takes the MSB file[s] from \raw and updates to minecraft 1.12 standard .mcfunction files in \functions\qc
