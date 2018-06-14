@@ -181,13 +181,16 @@ def parsemsb(commands):
 			new_func = []
 			function_names.append(name)
 			# loop through the next commands until it ends, in which case we will know it is a new function/loop/var
-			while next_split[0] != 'function' and next_split[0] != 'loop' and (i + 1 < len(commands) - 1):
+			while next_split[0] != 'function' and next_split[0] != 'loop' and (i < len(commands)):
 				# replace the MSB goto identifiers
 				if next.find('run') > -1:
 					next.replace('run ', "function qc:")
 				# replace the selector shortcut
 				next = next.replace("@"+name,sel)
 				new_func.append(next)
+				# special case of another command being on the last line of the document
+				if i == len(commands)-1:
+					break					# since the loop uses a look ahead I have to, Im sorry.
 				# update the interior loop
 				i += 1
 				next = commands[i]
