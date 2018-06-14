@@ -2,7 +2,8 @@
 Python scripts to be run console side that assist with Minecraft command (.mcfunction) production.
 
 ### Example with using the msb parse tool
-```"""
+```
+"""
 takes the MSB file[s] from \raw and updates to minecraft 1.12 standard .mcfunction files in \functions\qc
 2018-06-13
 """
@@ -10,7 +11,6 @@ takes the MSB file[s] from \raw and updates to minecraft 1.12 standard .mcfuncti
 import sys, os
 sys.path.append(os.path.abspath('c:\\projects\\Minecraft Command Tools'))
 from mccommandtools import parsemsb
-
 
 DIRECTORY_IN = 'c:\\projects\\qc\\raw\\Quarry Carts'
 DIRECTORY_OUT = 'c:\\projects\\qc\\dump\\'
@@ -35,4 +35,4 @@ for f in range(len(funcs)-1):
 		new_f.write(c+"\n")
 
 print("\nFinished.")
-print("Created",files,"files.")```
+print("Created",files,"files.")
